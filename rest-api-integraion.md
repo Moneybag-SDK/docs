@@ -352,7 +352,6 @@ curl -X GET \
 - All requests and responses use JSON.
 - Ensure your `success_url`, `fail_url`, and `cancel_url` are accessible and can handle GET requests.
 - The `X-Merchant-API-Key` header is required for authentication.
-- The `order_amount` must be between 10.00 and 500,000.00 BDT, with up to 2 decimal places.
 - The `currency` must be a three-letter code (e.g., BDT, USD, EUR).
 
 ---
