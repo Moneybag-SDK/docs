@@ -355,4 +355,3 @@ curl -X GET \
 - The `currency` must be a three-letter code (e.g., BDT, USD, EUR).
 
 ---
-````
