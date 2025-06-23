@@ -38,6 +38,49 @@ sequenceDiagram
 ```
 ---
 
+## Redirect URLs and Transaction Status
+
+After a transaction is completed, Moneybag redirects the customer to one of the merchant's specified URLs based on the transaction outcome. Moneybag appends query parameters to these URLs with the transaction details.
+
+### Redirect URL Format
+```
+https://yourdomain.com/payment/{status}?transaction_id={transaction_id}&status={STATUS}
+```
+
+Example redirect URL:
+```
+# Successful payment
+https://example.com/payment/success?transaction_id=txn691765dba92741829f72de6eacec8a76&status=SUCCESS
+
+# Failed payment
+https://example.com/payment/fail?transaction_id=txn691765dba92741829f72de6eacec8a76&status=FAILED
+
+# Cancelled payment
+https://example.com/payment/cancel?transaction_id=txn691765dba92741829f72de6eacec8a76&status=CANCELLED
+```
+
+| Redirect URL | Transaction Status | Description |
+|--------------|-------------------|-------------|
+| **success_url** | **SUCCESS** | Customer is redirected here when payment is completed successfully |
+| **fail_url** | **FAILED** | Customer is redirected here when payment fails (e.g., insufficient funds, declined card) |
+| **cancel_url** | **CANCELLED** | Customer is redirected here when they manually cancel the payment process |
+
+### Query Parameters
+Moneybag appends the following query parameters to your redirect URLs:
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| **transaction_id** | string | Unique transaction identifier (e.g., `txn691765dba92741829f72de6eacec8a76`) |
+| **status** | string | Transaction status (SUCCESS, FAILED, or CANCELLED) |
+
+### Important Notes:
+- These URLs must be provided in the initial checkout request
+- Always verify the actual payment status using the `/payments/verify/{transaction_id}` endpoint after receiving the redirect
+- Do not rely solely on the redirect for payment confirmation - server-side verification is essential for security
+- Use the `transaction_id` from the query parameters to verify the payment status through the verify API
+
+---
+
 
 ## Base URL
 
