@@ -120,7 +120,7 @@ Initiate a payment session for a customer order. This returns a checkout URL whe
 |----------------------|---------------------|----------|----------------------------------------------------------------------------------------------|----------------------------------------------------|
 | order_id             | string              | Yes      | Unique transaction ID to identify your order                                                 | Max 30 chars                                       |
 | currency             | string              | Yes      | Three-letter currency code (e.g., BDT, USD, EUR)                                             | Must match `^[A-Z]{3}$`                            |
-| order_amount         | decimal             | Yes      | Transaction amount between 10.00 and 500000.00 BDT                                           | Max 2 decimal places                               |
+| order_amount         | decimal             | Yes      | Merchant order amount                                          | Max 2 decimal places                               |
 | order_description    | string              | No       | Description of the order                                                                     |                                                    |
 | success_url          | string (URL)        | Yes      | Callback URL after successful payment                                                        | Max 255 chars, must start with http/https          |
 | cancel_url           | string (URL)        | Yes      | Callback URL if user cancels the transaction                                                 | Max 255 chars, must start with http/https          |
