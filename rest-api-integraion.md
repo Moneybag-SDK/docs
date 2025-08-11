@@ -210,7 +210,7 @@ To initiate a checkout session using cURL:
 
 ```sh
 curl -X POST \
-  "https://staging-api.moneybag.com.bd/api/v2/payments/checkout" \
+  "https://sandbox-api.moneybag.com.bd/api/v2/payments/checkout" \
   -H "Content-Type: application/json" \
   -H "X-Merchant-API-Key: <your_merchant_api_key>" \
   -d '{
@@ -379,7 +379,7 @@ To verify a payment using cURL:
 
 ```sh
 curl -X GET \
-  "https://staging-api.moneybag.com.bd/api/v2/payments/verify/{transaction_id}" \
+  "https://sandbox-api.moneybag.com.bd/api/v2/payments/verify/{transaction_id}" \
   -H "X-Merchant-API-Key: <your_merchant_api_key>"
 ```
 
