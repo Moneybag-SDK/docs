@@ -196,7 +196,7 @@ Initiate a payment session for a customer order. This returns a checkout URL whe
 {
   "success": true,
   "data": {
-    "checkout_url": "https://payment.moneybag.com.bd/moneybag-landing?sessionId=ps1234567890",
+    "checkout_url": "https://sandbox.payment.moneybag.com.bd/moneybag-landing?sessionId=ps1234567890",
     "session_id": "ps1234567890",
     "expires_at": "2025-05-19T15:00:00Z"
   },
@@ -210,7 +210,7 @@ To initiate a checkout session using cURL:
 
 ```sh
 curl -X POST \
-  "https://sandbox-api.moneybag.com.bd/api/v2/payments/checkout" \
+  "https://sandbox.api.moneybag.com.bd/api/v2/payments/checkout" \
   -H "Content-Type: application/json" \
   -H "X-Merchant-API-Key: <your_merchant_api_key>" \
   -d '{
@@ -379,7 +379,7 @@ To verify a payment using cURL:
 
 ```sh
 curl -X GET \
-  "https://sandbox-api.moneybag.com.bd/api/v2/payments/verify/{transaction_id}" \
+  "https://sandbox.api.moneybag.com.bd/api/v2/payments/verify/{transaction_id}" \
   -H "X-Merchant-API-Key: <your_merchant_api_key>"
 ```
 
