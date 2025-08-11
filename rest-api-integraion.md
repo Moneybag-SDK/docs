@@ -41,8 +41,8 @@ sequenceDiagram
 
 ## Base URL
 
-**Staging URL:**
-`https://staging.api.moneybag.com.bd/api/v2`
+**Sndbox URL:**
+`https://sandbox.api.moneybag.com.bd/api/v2`
 
 ---
 
